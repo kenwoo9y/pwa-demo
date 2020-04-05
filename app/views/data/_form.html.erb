@@ -35,7 +35,7 @@
     <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
     <% if @datum.persisted? && @datum.image? %>
       <label>
-        <%= f.check_box :remove_image %>
+        <%= form.check_box :remove_image %>
         画像を削除
       </label>
     <% end %>
