@@ -10,5 +10,14 @@
   <%= @datum.date %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <% if @datum.image? %>
+    <div class="thumbnail">
+      <%= image_tag @datum.image.url %>
+    </div>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_datum_path(@datum) %> |
 <%= link_to 'Back', data_path %>

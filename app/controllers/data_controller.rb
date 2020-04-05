@@ -69,6 +69,6 @@ class DataController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def datum_params
-      params.require(:datum).permit(:name, :date)
+      params.require(:datum).permit(:name, :date, :image, :image_cache, :remove_image)
     end
 end

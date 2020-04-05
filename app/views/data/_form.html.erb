@@ -21,6 +21,26 @@
     <%= form.date_select :date %>
   </div>
 
+  <div class="field">
+    <% if @datum.image? %>
+      <div class="thumbnail">
+        <%= image_tag @datum.image.url %>
+      </div>
+    <% end %><br>
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @datum.persisted? && @datum.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
