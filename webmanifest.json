@@ -1,0 +1,14 @@
+{
+    "name": "PWA demo sample",
+    "short_name": "PWAサンプル",
+    "description": "demo sample for progressive web apps",
+    "display": "standalone",
+    "start_url": "/data",
+    "icons": [
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
