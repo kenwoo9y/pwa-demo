@@ -76,24 +76,3 @@ function onFetch(event) {
 self.addEventListener('install', onInstall);
 self.addEventListener('activate', onActivate);
 self.addEventListener('fetch', onFetch);
-
-
-// IndexedDB
-var dbName = 'requestDB';
-var dbVersion = '1';
-
-var request = indexedDB.open(dbName, dbVersion);
-
-request.onupgradeneeded = function(event) {
-  var db = event.target.result;
-  var objectStore = db.createObjectStore("datum", { keyPath: "id" });
-  objectStore.createIndex
-}
-
-
-request.onerror = function(event) {
-  // request.errorCode に対して行うこと!
-};
-request.onsuccess = function(event) {
-  // request.result に対して行うこと!
-};
