@@ -76,10 +76,3 @@ function onFetch(event) {
 self.addEventListener('install', onInstall);
 self.addEventListener('activate', onActivate);
 self.addEventListener('fetch', onFetch);
-
-
-// IndexedDB
-var dbName = 'requestDB';
-var dbVersion = '1';
-
-var request = indexedDB.open(dbName, dbVersion);
