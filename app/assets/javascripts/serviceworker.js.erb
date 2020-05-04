@@ -1,6 +1,7 @@
 var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_VERSION + ':sw-cache-';
 
+self.addEventListener('install', onInstall);
 function onInstall(event) {
   console.log('[Serviceworker]', "Installing!", event);
   event.waitUntil(
@@ -24,6 +25,7 @@ function onInstall(event) {
   );
 }
 
+self.addEventListener('activate', onActivate);
 function onActivate(event) {
   console.log('[Serviceworker]', "Activating!", event);
   event.waitUntil(
@@ -42,6 +44,7 @@ function onActivate(event) {
   );
 }
 
+self.addEventListener('fetch', onFetch);
 // Borrowed from https://github.com/TalAter/UpUp
 function onFetch(event) {
   event.respondWith(
@@ -72,7 +75,3 @@ function onFetch(event) {
     })
   );
 }
-
-self.addEventListener('install', onInstall);
-self.addEventListener('activate', onActivate);
-self.addEventListener('fetch', onFetch);
